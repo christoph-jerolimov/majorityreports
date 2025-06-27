@@ -1,6 +1,13 @@
-# [Backstage](https://backstage.io)
+# ✨ Majority Reports Dashboard 🔮
 
-This is your newly scaffolded Backstage App, Good Luck!
+WIP!
+
+A [Backstage](https://backstage.io)-powered web interface for data visualization and management.
+
+- Namespace management
+- Entity management interfaces
+- Report viewing and generation
+- Search and filtering capabilities
 
 To start the app, run:
 
