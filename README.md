@@ -48,7 +48,7 @@ The system is built around key entities:
    ```bash
    cd dashboard
    yarn install
-   yarn dev
+   yarn start
    ```
 
 4. **Access the applications:**
@@ -86,7 +86,7 @@ make test     # Run tests
 ```bash
 cd dashboard
 yarn install  # Install dependencies
-yarn dev      # Start development server
+yarn start    # Start development server
 yarn build    # Build for production
 ```
 

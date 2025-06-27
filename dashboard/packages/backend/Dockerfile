@@ -8,6 +8,9 @@
 # yarn build:backend
 #
 # Once the commands have been run, you can build the image using `yarn build-image`
+#
+# Alternatively, there is also a multi-stage Dockerfile documented here:
+# https://backstage.io/docs/deployment/docker#multi-stage-build
 
 FROM node:20-bookworm-slim
 
@@ -40,12 +43,14 @@ WORKDIR /app
 # Copy files needed by Yarn
 COPY --chown=node:node .yarn ./.yarn
 COPY --chown=node:node .yarnrc.yml ./
+COPY --chown=node:node backstage.json ./
+
 
 # This switches many Node.js dependencies to production mode.
 ENV NODE_ENV=production
 
 # This disables node snapshot for Node 20 to work with the Scaffolder
-ENV NODE_OPTIONS "--no-node-snapshot"
+ENV NODE_OPTIONS="--no-node-snapshot"
 
 # Copy repo skeleton first, to avoid unnecessary docker cache invalidation.
 # The skeleton contains the package.json of each package in the monorepo,
